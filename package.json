@@ -1,0 +1,20 @@
+{
+  "name": "k8s-clubhouse-clone",
+  "version": "1.0.0",
+  "description": "A clubhouse clone with a microservice archistructure (docker + k8s).",
+  "main": "index.js",
+  "scripts": {
+    "": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bineetNaidu/k8s-clubhouse-clone.git"
+  },
+  "keywords": [],
+  "author": "BineetNaidu <bineetnaiduapps@gmail.com> (https://bineetnaidu.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bineetNaidu/k8s-clubhouse-clone/issues"
+  },
+  "homepage": "https://github.com/bineetNaidu/k8s-clubhouse-clone#readme"
+}
