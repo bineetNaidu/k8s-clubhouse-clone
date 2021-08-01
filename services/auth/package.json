@@ -6,6 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=production node dist/index.js",
     "watch": "tsc -w",
+    "build": "tsc",
     "dev": "NODE_ENV=development nodemon dist/index.js",
     "dev:ts": "NODE_ENV=development nodemon src/index.ts",
     "test": "NODE_ENV=test jest",

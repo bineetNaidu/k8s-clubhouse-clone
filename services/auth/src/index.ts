@@ -6,6 +6,19 @@ import { createTypeORMConnection } from './utils/createTypeORMConnection';
 
 (async () => {
   try {
+    if (process.env.DB_HOST) {
+      throw new Error(">> { 'DB_HOST' is undefined! }");
+    }
+    if (process.env.DB_USERNAME) {
+      throw new Error(">> { 'DB_USERNAME' is undefined! }");
+    }
+    if (process.env.DB_PASSWORD) {
+      throw new Error(">> { 'DB_PASSWORD' is undefined! }");
+    }
+    if (process.env.DB_NAME) {
+      throw new Error(">> { 'DB_NAME' is undefined! }");
+    }
+
     const conn = await createTypeORMConnection();
 
     if (!conn.isConnected) {
