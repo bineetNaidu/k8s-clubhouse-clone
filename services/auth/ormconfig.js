@@ -1,0 +1,26 @@
+module.exports = [
+  {
+    name: 'development',
+    type: 'postgres',
+    host: process.env.DB_HOST,
+    port: 5432,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    logging: true,
+    synchronize: true,
+    entities: ['src/enitities/**/*.ts'],
+  },
+  {
+    name: 'test',
+    type: 'postgres',
+    host: 'localhost',
+    port: 5432,
+    username: 'postgres',
+    password: 'DB_PASSWORD',
+    database: 'DB_TEST_DATABASE',
+    logging: false,
+    synchronize: true,
+    entities: ['src/enitities/**/*.ts'],
+  },
+];
