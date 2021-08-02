@@ -16,13 +16,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (_req, res) => {
-  res.json({
-    message: '🦄🌈✨👋🌎🌍🌏✨🌈🦄',
-  });
-});
-
-app.use('/api', apiRoutes);
+app.use('/api/auth', apiRoutes);
 
 //! Not found page error
 app.all('*', NotFoundError);

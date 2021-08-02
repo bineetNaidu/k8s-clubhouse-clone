@@ -5,7 +5,7 @@ const r = Router();
 
 r.get('/', (_req, res) => {
   res.json({
-    msg: 'Hello API',
+    msg: 'Hello Auth API',
   });
 });
 
