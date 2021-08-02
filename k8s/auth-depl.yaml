@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth
+  template:
+    metadata:
+      labels:
+        app: auth
+    spec:
+      containers:
+      - name: auth
+        image: bineetnaidu/clubhouse-auth
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: NODE_ENV
+            value: development
+          - name: DB_HOST
+            value: auth-pg-srv
+          - name: DB_USERNAME
+            value: postgres
+          - name: DB_PASSWORD
+            value: postgres
+          - name: DB_NAME
+            value: auth
+        resources:
+          limits:
+            memory: "100Mi"
+            cpu: "180m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-srv
+spec:
+  selector:
+    app: auth
+  ports:
+  - name: auth
+    protocol: TCP
+    port: 4242
+    targetPort: 4242

@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-pg-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-pg
+  template:
+    metadata:
+      labels:
+        app: auth-pg
+    spec:
+      containers:
+      - name: auth-pg
+        image: postgres
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: POSTGRES_PASSWORD
+            value: postgres
+          - name: POSTGRES_DB
+            value: auth
+        resources:
+          limits:
+            memory: "100Mi"
+            cpu: "180m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-pg-srv
+spec:
+  selector:
+    app: auth-pg
+  ports:
+  - name: auth-db
+    protocol: TCP
+    port: 5432 
+    targetPort: 5432 
