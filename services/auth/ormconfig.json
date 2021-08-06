@@ -9,7 +9,7 @@
     "database": "auth",
     "logging": true,
     "synchronize": true,
-    "entities": ["src/enitities/**/*.ts"]
+    "entities": ["src/entity/**/*.ts"]
   },
   {
     "name": "test",
@@ -21,6 +21,6 @@
     "database": "DB_TEST_DATABASE",
     "logging": false,
     "synchronize": true,
-    "entities": ["src/enitities/**/*.ts"]
+    "entities": ["src/entity/**/*.ts"]
   }
 ]
