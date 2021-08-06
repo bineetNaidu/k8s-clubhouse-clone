@@ -1,15 +1,14 @@
 import { Router } from 'express';
-import { createTweet, getAllTweets } from '../controllers/tweet';
+import { login } from './login';
+import { register } from './register';
+import { validateRegister, validateLogin } from '../utils/validations';
+import { logout } from './logout';
+import { validateRequest } from '../middlewares/validateRequest';
 
 const r = Router();
 
-r.get('/', (_req, res) => {
-  res.json({
-    msg: 'Hello Auth API',
-  });
-});
-
-r.get('/tweets', getAllTweets);
-r.post('/tweets', createTweet);
+r.post('/register', validateRegister, validateRequest, register);
+r.post('/login', validateLogin, validateRequest, login);
+r.post('/logout', logout);
 
 export { r as apiRoutes };
