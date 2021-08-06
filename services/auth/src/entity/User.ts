@@ -24,15 +24,15 @@ export class User extends BaseEntity {
   @Column()
   avatar: string;
 
-  @Column()
+  @Column({ default: false })
   is_admin: boolean;
 
-  @Column()
+  @Column({ default: false })
   is_verified: boolean;
 
   @CreateDateColumn()
-  createdAt: Date;
+  created_at: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updated_at: Date;
 }
