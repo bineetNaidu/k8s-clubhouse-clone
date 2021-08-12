@@ -47,7 +47,10 @@ export const login = async (req: Request, res: Response) => {
         expiresIn: '1h',
       }
     );
-    res.cookie('ch-token', token);
+    req.session = {
+      // @ts-ignore
+      token,
+    };
     return res.json({
       data: user,
       success: true,

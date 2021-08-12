@@ -1,6 +1,11 @@
 import { Request, Response } from 'express';
 
-export const logout = async (_req: Request, res: Response) => {
-  res.clearCookie('ch-token');
-  res.redirect('/');
+export const logout = async (req: Request, res: Response) => {
+  req.session.destroy((err) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.redirect('/');
+    }
+  });
 };
