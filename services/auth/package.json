@@ -25,6 +25,7 @@
   "devDependencies": {
     "@types/cors": "^2.8.10",
     "@types/express": "^4.17.12",
+    "@types/express-session": "^1.17.4",
     "@types/jest": "^26.0.24",
     "@types/jsonwebtoken": "^8.5.4",
     "@types/morgan": "^1.9.2",
@@ -43,6 +44,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
+    "express-session": "^1.17.2",
     "express-validator": "^6.12.1",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
